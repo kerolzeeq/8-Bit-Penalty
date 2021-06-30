@@ -12,7 +12,7 @@ public class blink : MonoBehaviour
 
     public void Update()
     {
-        bg.color = Lerp(gray,white,1.0f);
+        
         taptoplay.color = Lerp(white,gray,4.0f);
     }
     
