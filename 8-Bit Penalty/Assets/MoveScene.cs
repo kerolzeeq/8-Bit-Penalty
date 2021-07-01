@@ -5,15 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class MoveScene : MonoBehaviour
 {
-    public GameObject UImoving;
+    
     int currentSceneIndex;
-    Animator titleanim,textanim;
+    Animator titleanim,textanim,ballanim;
     private void Start()
     {
         StartCoroutine(StartWait());
         currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         textanim = GameObject.Find("Tap2Play").GetComponent<Animator>();
         titleanim = GameObject.Find("Title").GetComponent<Animator>();
+        ballanim = GameObject.Find("Blueball").GetComponent<Animator>();
     }
     // Update is called once per frame
     void Update()
@@ -22,6 +23,7 @@ public class MoveScene : MonoBehaviour
         {
             textanim.SetBool("exit", true);
             titleanim.SetBool("exit", true);
+            ballanim.SetBool("exit", true);
             StartCoroutine(StartCountdown());
             
         }
