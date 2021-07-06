@@ -21,11 +21,14 @@ public class MoveScene : MonoBehaviour
     {
         if(Input.touchCount > 0 || Input.GetMouseButtonDown(0))
         {
-            textanim.SetBool("exit", true);
-            titleanim.SetBool("exit", true);
-            ballanim.SetBool("exit", true);
-            StartCoroutine(StartCountdown());
-            
+            float y = Screen.height / 5;
+            if (Input.mousePosition.y >= y)
+            {
+                textanim.SetBool("exit", true);
+                titleanim.SetBool("exit", true);
+                ballanim.SetBool("exit", true);
+                StartCoroutine(StartCountdown());
+            }
         }
     }
 
@@ -51,5 +54,10 @@ public class MoveScene : MonoBehaviour
  
             yield return new WaitForSeconds(0.5f);
             
+    }
+
+    public void diz()
+    {
+        Debug.Log("Jadi ni");
     }
 }

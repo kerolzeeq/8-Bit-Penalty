@@ -17,8 +17,8 @@ public class Swipe : MonoBehaviour
     private void Start()
     {
         PlayerPrefs.SetInt("cekgol",0);
-        playeranim = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
-        playeranim.SetBool("shooted", false);
+        //playeranim = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
+       // playeranim.SetBool("shooted", false);
         keeper = GameObject.Find("Keeper1");
         kd = keeper.GetComponent<KeeperDive>();
     }
@@ -38,7 +38,7 @@ public class Swipe : MonoBehaviour
             //if finger released from screen
             if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended)
             {
-                playeranim.SetBool("shooted", true);
+               // playeranim.SetBool("shooted", true);
                 touchTimeFinish = Time.time; // marking time when release
 
                 timeInterval = touchTimeFinish - touchTimeStart; //Calculate swipe time interval
@@ -55,7 +55,7 @@ public class Swipe : MonoBehaviour
 
             if (GetComponent<Rigidbody2D>().velocity != Vector2.zero)
             {
-                playeranim.SetBool("shooted", false);
+               // playeranim.SetBool("shooted", false);
                 kd.dive();
             }
         }
