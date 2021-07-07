@@ -26,29 +26,36 @@ public class Swipe : MonoBehaviour
     void Update()
     {
         cekgol = PlayerPrefs.GetInt("cekgol");
+        float y = Screen.height / 5;
         if (cekgol == 0)
         {
             //touch  the screen
             if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
             {
-                touchTimeStart = Time.time; // get touch position and marking time when screen is touched
-                startPos = Input.GetTouch(0).position;
+                if (Input.mousePosition.y >= y)
+                {
+                    touchTimeStart = Time.time; // get touch position and marking time when screen is touched
+                    startPos = Input.GetTouch(0).position;
+                }
             }
 
             //if finger released from screen
             if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended)
             {
-               // playeranim.SetBool("shooted", true);
-                touchTimeFinish = Time.time; // marking time when release
+                if (Input.mousePosition.y >= y)
+                {
+                    // playeranim.SetBool("shooted", true);
+                    touchTimeFinish = Time.time; // marking time when release
 
-                timeInterval = touchTimeFinish - touchTimeStart; //Calculate swipe time interval
+                    timeInterval = touchTimeFinish - touchTimeStart; //Calculate swipe time interval
 
-                endPos = Input.GetTouch(0).position; // release finger position
+                    endPos = Input.GetTouch(0).position; // release finger position
 
-                direction = startPos - endPos; //calculate swipe direction
+                    direction = startPos - endPos; //calculate swipe direction
 
-                //add force
-                GetComponent<Rigidbody2D>().AddForce(-direction / timeInterval * throwforce);
+                    //add force
+                    GetComponent<Rigidbody2D>().AddForce(-direction / timeInterval * throwforce);
+                }
 
             }
 

@@ -81,5 +81,9 @@ public class CheckGoal : MonoBehaviour
         SceneManager.LoadScene("Penalty");
     }
 
-  
+    public void returnscene()
+    {
+        SceneManager.LoadScene("Home");
+    }
+
 }

@@ -60,4 +60,9 @@ public class MoveScene : MonoBehaviour
     {
         SceneManager.LoadScene("TrophyRoom");
     }
+
+    public void returnscene()
+    {
+        SceneManager.LoadScene("Home");
+    }
 }

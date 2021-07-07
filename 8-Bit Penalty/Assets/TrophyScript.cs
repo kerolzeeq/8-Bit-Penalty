@@ -9,26 +9,27 @@ public class TrophyScript : MonoBehaviour
     [SerializeField]
     GameObject[] trophyshadow;
 
-    int totalgoal;
+    int totalgoal = 0;
     void Start()
     {
         totalgoal = PlayerPrefs.GetInt("totalgoal");
-    }
+        
 
-    public void checkgoals()
-    {
         if (totalgoal >= 10)
         {
             trophyshadow[0].SetActive(false);
-        } else if (totalgoal >= 12)
+        }
+        if (totalgoal >= 100)
         {
             trophyshadow[1].SetActive(false);
-        } else if (totalgoal >= 15)
+        }
+        if (totalgoal >= 1000)
         {
             trophyshadow[2].SetActive(false);
         }
 
     }
+
 
     public void returnscene()
     {
