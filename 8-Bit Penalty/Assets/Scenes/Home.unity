@@ -571,7 +571,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 15204162}
         m_TargetAssemblyTypeName: MoveScene, Assembly-CSharp
-        m_MethodName: diz
+        m_MethodName: MoveTrophyRoomScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

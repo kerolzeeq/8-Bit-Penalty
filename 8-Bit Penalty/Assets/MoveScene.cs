@@ -56,8 +56,8 @@ public class MoveScene : MonoBehaviour
             
     }
 
-    public void diz()
+    public void MoveTrophyRoomScene()
     {
-        Debug.Log("Jadi ni");
+        SceneManager.LoadScene("TrophyRoom");
     }
 }
