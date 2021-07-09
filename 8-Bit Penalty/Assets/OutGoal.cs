@@ -6,10 +6,29 @@ public class OutGoal : MonoBehaviour
 {
     // Start is called before the first frame update
 
+    [SerializeField]
+    GameObject tap2restart;
+
+    [SerializeField]
+    GameObject NoGoalText;
+
     int streak = 0;
+    bool goal;
     void Start()
     {
         streak = PlayerPrefs.GetInt("streak");
+        
+
+        
+    }
+
+    private void Update()
+    {
+        if (goal && Input.touchCount > 0)
+        {
+            SceneManager.LoadScene("Penalty");
+            goal = false;
+        }
     }
 
 
@@ -20,7 +39,9 @@ public class OutGoal : MonoBehaviour
         {
 
             PlayerPrefs.SetInt("streak", 0);
-            SceneManager.LoadScene("Penalty");
+            NoGoalText.SetActive(true);
+            tap2restart.SetActive(true);
+            goal = true;
 
         }
 

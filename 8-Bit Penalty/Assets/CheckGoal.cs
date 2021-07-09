@@ -22,6 +22,9 @@ public class CheckGoal : MonoBehaviour
     [SerializeField]
     GameObject tap2restart;
 
+    [SerializeField]
+    GameObject GoalText;
+
     bool goal;
 
     void Start()
@@ -64,6 +67,7 @@ public class CheckGoal : MonoBehaviour
             PlayerPrefs.SetInt("cekgol", 1);
             camRipple.RippleEffect();
             tap2restart.SetActive(true);
+            GoalText.SetActive(true);
 
             goal = true;
             
