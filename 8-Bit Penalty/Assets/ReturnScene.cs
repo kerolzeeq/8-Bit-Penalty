@@ -8,4 +8,10 @@ public class ReturnScene : MonoBehaviour
     {
         SceneManager.LoadScene("Home");
     }
+
+    public void resetData()
+    {
+        PlayerPrefs.SetInt("totalgoal", 0);
+        PlayerPrefs.SetInt("streak", 0);
+    }
 }
