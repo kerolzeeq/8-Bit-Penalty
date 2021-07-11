@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TrophyRoom.unity
     guid: 4a22b9f981f4401449e8f834182efcff
+  - enabled: 1
+    path: Assets/Scenes/Settings.unity
+    guid: ddf2938ac08fa404c8dc575e5ec083c5
   m_configObjects: {}
