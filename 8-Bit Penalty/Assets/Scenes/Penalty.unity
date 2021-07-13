@@ -6509,7 +6509,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5732174481953109114, guid: c21b89bbc75ac9540879657301162f3b, type: 3}
       propertyPath: sounds.Array.data[2].loop
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5732174481953109114, guid: c21b89bbc75ac9540879657301162f3b, type: 3}
       propertyPath: sounds.Array.data[3].name
@@ -6529,7 +6529,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5732174481953109114, guid: c21b89bbc75ac9540879657301162f3b, type: 3}
       propertyPath: sounds.Array.data[3].loop
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5732174481953109114, guid: c21b89bbc75ac9540879657301162f3b, type: 3}
       propertyPath: sounds.Array.data[4].name
@@ -6549,7 +6549,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5732174481953109114, guid: c21b89bbc75ac9540879657301162f3b, type: 3}
       propertyPath: sounds.Array.data[4].loop
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5732174481953109114, guid: c21b89bbc75ac9540879657301162f3b, type: 3}
+      propertyPath: sounds.Array.data[1].loop
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5732174481953109115, guid: c21b89bbc75ac9540879657301162f3b, type: 3}
       propertyPath: m_Name
