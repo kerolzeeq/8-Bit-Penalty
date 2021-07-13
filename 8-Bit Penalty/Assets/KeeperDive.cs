@@ -10,7 +10,7 @@ public class KeeperDive : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        thrust = Random.Range(-1f, 1f);
+        thrust = Random.Range(-2f, 2f);
     }
 
     // Update is called once per frame

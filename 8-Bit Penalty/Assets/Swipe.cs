@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.EventSystems;
 public class Swipe : MonoBehaviour
 {
     Vector2 startPos, endPos, direction;
@@ -16,6 +16,8 @@ public class Swipe : MonoBehaviour
     
     private void Start()
     {
+
+        StartCoroutine(StartWait());
         PlayerPrefs.SetInt("cekgol",0);
         //playeranim = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
        // playeranim.SetBool("shooted", false);
@@ -25,6 +27,8 @@ public class Swipe : MonoBehaviour
 
     void Update()
     {
+        if (EventSystem.current.IsPointerOverGameObject())
+            return;
         cekgol = PlayerPrefs.GetInt("cekgol");
         float y = Screen.height / 5;
         if (cekgol == 0)
@@ -64,7 +68,14 @@ public class Swipe : MonoBehaviour
             {
                // playeranim.SetBool("shooted", false);
                 kd.dive();
+
             }
         }
+    }
+    public IEnumerator StartWait(float countdownValue = 10)
+    {
+
+        yield return new WaitForSeconds(0.5f);
+
     }
 }

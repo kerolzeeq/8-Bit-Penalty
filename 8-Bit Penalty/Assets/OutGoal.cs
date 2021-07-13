@@ -26,7 +26,7 @@ public class OutGoal : MonoBehaviour
     {
         if (goal && Input.touchCount > 0)
         {
-            SceneManager.LoadScene("Penalty");
+            StartCoroutine(StartWait());
             goal = false;
         }
     }
@@ -45,5 +45,12 @@ public class OutGoal : MonoBehaviour
 
         }
 
+    }
+
+    public IEnumerator StartWait(float countdownValue = 10)
+    {
+
+        yield return new WaitForSeconds(1.0f);
+        SceneManager.LoadScene("Penalty");
     }
 }

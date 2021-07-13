@@ -65,4 +65,9 @@ public class MoveScene : MonoBehaviour
     {
         SceneManager.LoadScene("Settings");
     }
+
+    public void InstructionsScene()
+    {
+        SceneManager.LoadScene("Instructions");
+    }
 }

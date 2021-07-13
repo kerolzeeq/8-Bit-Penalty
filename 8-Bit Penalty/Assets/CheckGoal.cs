@@ -49,7 +49,7 @@ public class CheckGoal : MonoBehaviour
 
         if (goal && Input.touchCount > 0)
         {
-            SceneManager.LoadScene("Penalty");
+            StartCoroutine(StartWait());
             goal = false;
         }
     }
@@ -81,7 +81,7 @@ public class CheckGoal : MonoBehaviour
     public IEnumerator StartWait(float countdownValue = 10)
     {
 
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1.0f);
         SceneManager.LoadScene("Penalty");
     }
 
