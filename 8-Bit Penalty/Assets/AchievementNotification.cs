@@ -18,6 +18,7 @@ public class AchievementNotification : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        totalgoal = PlayerPrefs.GetInt("totalgoal");
         if (totalgoal == 10)
         {
             noti.SetActive(true);
