@@ -42,15 +42,13 @@ public class MoveScene : MonoBehaviour
     }
 
     float currCountdownValue;
-    public IEnumerator StartCountdown(float countdownValue = 10)
+    public IEnumerator StartCountdown()
     {
-        currCountdownValue = countdownValue;
+        
         transitionAnim.SetTrigger("End");
-        while (currCountdownValue > 0)
-        {
-            yield return new WaitForSeconds(0.9f);
-            currCountdownValue--;
-        }
+        
+        yield return new WaitForSeconds(0.9f);
+        
         LoadNextLevel();
     }
 
