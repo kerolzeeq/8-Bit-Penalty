@@ -982,4 +982,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/TrophyRoom.unity
   - Assets/Scenes/Settings.unity
   - Assets/Scenes/Instructions.unity
-  playerPath: C:/Users/User/Desktop/8BitPenalty.apk
+  playerPath: C:/Users/User/Desktop/8BitPenalty.aab
