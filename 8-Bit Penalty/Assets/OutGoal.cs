@@ -39,6 +39,7 @@ public class OutGoal : MonoBehaviour
         {
 
             PlayerPrefs.SetInt("streak", 0);
+            FindObjectOfType<AudioManager>().Play("NoGoal");
             NoGoalText.SetActive(true);
             tap2restart.SetActive(true);
             goal = true;

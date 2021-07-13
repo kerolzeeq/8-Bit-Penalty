@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -8,6 +9,8 @@ public class MoveScene : MonoBehaviour
     
     int currentSceneIndex;
     Animator titleanim,textanim,ballanim;
+
+    public Animator transitionAnim;
     private void Start()
     {
         StartCoroutine(StartWait());
@@ -34,6 +37,7 @@ public class MoveScene : MonoBehaviour
 
     void LoadNextLevel()
     {
+        FindObjectOfType<AudioManager>().Play("UISound");
         SceneManager.LoadScene(currentSceneIndex + 1);
     }
 
@@ -41,6 +45,7 @@ public class MoveScene : MonoBehaviour
     public IEnumerator StartCountdown(float countdownValue = 10)
     {
         currCountdownValue = countdownValue;
+        transitionAnim.SetTrigger("End");
         while (currCountdownValue > 0)
         {
             yield return new WaitForSeconds(0.9f);
@@ -58,16 +63,36 @@ public class MoveScene : MonoBehaviour
 
     public void MoveTrophyRoomScene()
     {
+        FindObjectOfType<AudioManager>().Play("UISound");
+        StartCoroutine(LoadMoveTrophy());
+    }
+    public IEnumerator LoadMoveTrophy()
+    {
+        transitionAnim.SetTrigger("End");
+        yield return new WaitForSeconds(0.9f);
         SceneManager.LoadScene("TrophyRoom");
     }
-
     public void SettingsScene()
     {
+        FindObjectOfType<AudioManager>().Play("UISound");
+        StartCoroutine(LoadSettings());
+    }
+    public IEnumerator LoadSettings()
+    {
+        transitionAnim.SetTrigger("End");
+        yield return new WaitForSeconds(0.9f);
         SceneManager.LoadScene("Settings");
     }
 
     public void InstructionsScene()
     {
+        FindObjectOfType<AudioManager>().Play("UISound");
+        StartCoroutine(LoadInstructions());
+    }
+    public IEnumerator LoadInstructions()
+    {
+        transitionAnim.SetTrigger("End");
+        yield return new WaitForSeconds(0.9f);
         SceneManager.LoadScene("Instructions");
     }
 }

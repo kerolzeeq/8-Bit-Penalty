@@ -16,8 +16,8 @@ public class Swipe : MonoBehaviour
     
     private void Start()
     {
+        
 
-        StartCoroutine(StartWait());
         PlayerPrefs.SetInt("cekgol",0);
         //playeranim = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
        // playeranim.SetBool("shooted", false);
@@ -72,10 +72,5 @@ public class Swipe : MonoBehaviour
             }
         }
     }
-    public IEnumerator StartWait(float countdownValue = 10)
-    {
 
-        yield return new WaitForSeconds(0.5f);
-
-    }
 }

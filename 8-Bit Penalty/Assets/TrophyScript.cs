@@ -9,6 +9,7 @@ public class TrophyScript : MonoBehaviour
     [SerializeField]
     GameObject[] trophyshadow;
 
+    public Animator transitionAnim;
     int totalgoal = 0;
     void Start()
     {
@@ -31,8 +32,17 @@ public class TrophyScript : MonoBehaviour
     }
 
 
+
     public void returnscene()
     {
+        FindObjectOfType<AudioManager>().Play("UISound");
+        StartCoroutine(LoadReturn());
+    }
+
+    public IEnumerator LoadReturn()
+    {
+        transitionAnim.SetTrigger("End");
+        yield return new WaitForSeconds(0.9f);
         SceneManager.LoadScene("Home");
     }
 

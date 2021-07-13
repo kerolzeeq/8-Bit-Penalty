@@ -25,6 +25,7 @@ public class CheckGoal : MonoBehaviour
     [SerializeField]
     GameObject GoalText;
 
+    public Animator transitionAnim;
     bool goal;
 
     void Start()
@@ -63,6 +64,7 @@ public class CheckGoal : MonoBehaviour
             streak++;
             PlayerPrefs.SetInt("totalgoal",totalgoal);
             PlayerPrefs.SetInt("streak", streak);
+            FindObjectOfType<AudioManager>().Play("Goal");
             go.SetActive(true);
             PlayerPrefs.SetInt("cekgol", 1);
             camRipple.RippleEffect();
@@ -87,7 +89,14 @@ public class CheckGoal : MonoBehaviour
 
     public void returnscene()
     {
-        SceneManager.LoadScene("Home");
+        FindObjectOfType<AudioManager>().Play("UISound");
+        StartCoroutine(LoadReturn());
     }
 
+    public IEnumerator LoadReturn()
+    {
+        transitionAnim.SetTrigger("End");
+        yield return new WaitForSeconds(0.9f);
+        SceneManager.LoadScene("Home");
+    }
 }
